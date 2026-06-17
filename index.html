@@ -424,31 +424,7 @@ footer{background:var(--dk);padding:2.8rem 5% 1.8rem}
     criativos:{ icon:'🎨', name:'Criação de Criativos', primary:false },
   };
 
-  const SYSTEM = `Você é o consultor digital da Agasbot Automação, empresa especializada em IA e marketing digital.
-
-Seu objetivo: entender as dores do cliente e recomendar os serviços certos.
-
-PRODUTOS DISPONÍVEIS:
-- Agente de IA para WhatsApp (PRODUTO PRINCIPAL): atendimento automático 24/7, qualificação de leads, vendas pelo WhatsApp
-- Agente de Voz com IA (PRODUTO PRINCIPAL): ligações automáticas, call center com IA, prospecção ativa por telefone, atendimento por voz
-- Criação de Apps e SaaS: desenvolvimento de aplicativos e plataformas digitais
-- Tráfego Pago: Google Ads e Meta Ads para gerar leads e vendas
-- Criação de Sites: sites profissionais e landing pages
-- Criação de Criativos: artes e vídeos para anúncios
-
-REGRAS OBRIGATÓRIAS:
-1. SEMPRE recomende o Agente de IA para WhatsApp OU o Agente de Voz (ou ambos) como produto(s) principal(ais) — independente da dor do cliente
-2. Só recomende outros produtos se fizerem sentido REAL para a dor apresentada
-3. Faça no máximo 2-3 perguntas antes de dar o diagnóstico
-4. Seja direto, empático e brasileiro no tom
-5. Quando tiver informação suficiente, gere o diagnóstico no formato JSON abaixo
-
-FORMATO DO DIAGNÓSTICO (quando pronto para recomendar):
-Responda normalmente no texto e ao final inclua exatamente este JSON (sem markdown):
-DIAGNOSTICO_JSON:{"recomendacoes":[{"produto":"whatsapp","motivo":"motivo curto aqui","prioritario":true},{"produto":"voz","motivo":"motivo curto","prioritario":false}]}
-
-Produtos válidos para o JSON: "whatsapp", "voz", "apps", "trafego", "sites", "criativos"
-Sempre inclua "whatsapp" ou "voz" (ou ambos) como prioritario:true.`;
+  // System prompt gerenciado pelo n8n
 
   let history = [];
   let waiting = false;
@@ -519,18 +495,18 @@ Sempre inclua "whatsapp" ou "voz" (ou ambos) como prioritario:true.`;
     showTyping(true);
     history.push({ role: 'user', content: userMessage });
     try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 30000);
+      const res = await fetch('https://n8n-n8n.va1lcg.easypanel.host/webhook/diagnostico-agasbot', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
-          max_tokens: 1000,
-          system: SYSTEM,
-          messages: history
-        })
+        signal: controller.signal,
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ messages: history })
       });
+      clearTimeout(timeout);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
       const data = await res.json();
-      const fullText = data.content && data.content[0] ? data.content[0].text : 'Desculpe, tive um problema. Pode tentar novamente?';
+      const fullText = data.reply || 'Desculpe, tive um problema. Pode tentar novamente?';
 
       // Check for diagnosis JSON
       const jsonMatch = fullText.match(/DIAGNOSTICO_JSON:(\{.+\})/s);
