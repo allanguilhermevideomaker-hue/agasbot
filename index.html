@@ -52,7 +52,7 @@ h2 em{font-style:normal;color:var(--c)}
 
 /* PRODUCTS */
 .products{background:var(--lt)}
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem}.pgrid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
 .pc{background:#fff;border:1.5px solid var(--b);border-radius:16px;padding:1.8rem 1.6rem;position:relative;overflow:hidden;transition:all .25s}
 .pc:hover{transform:translateY(-5px);box-shadow:0 14px 44px rgba(0,180,230,.12);border-color:rgba(0,200,245,.5)}
 .pc.ft{border-color:rgba(0,200,245,.5);background:linear-gradient(150deg,var(--c3) 0%,#fff 60%)}
@@ -129,8 +129,8 @@ footer{background:var(--dk);padding:2.8rem 5% 1.8rem}
 .sl:hover{border-color:var(--c);color:var(--c)}
 .waf{position:fixed;bottom:1.8rem;right:1.8rem;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(37,211,102,.5);z-index:200;text-decoration:none;animation:wfl 3s ease-in-out infinite;font-size:1.5rem}
 @keyframes wfl{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@media(max-width:850px){.pgrid,.sgrid,.sgr2{grid-template-columns:1fr 1fr}.hi,.ceoi{grid-template-columns:1fr}.hlw{display:none}.ftt{flex-direction:column}}
-@media(max-width:520px){.pgrid,.sgrid,.sgr2{grid-template-columns:1fr}.acts,.cas{flex-direction:column;align-items:stretch}.bp,.bo,.bwa,.bwh{text-align:center;justify-content:center}}
+@media(max-width:850px){.pgrid,.pgrid2,.sgrid,.sgr2{grid-template-columns:1fr 1fr}.hi,.ceoi{grid-template-columns:1fr}.hlw{display:none}.ftt{flex-direction:column}}
+@media(max-width:520px){.pgrid,.pgrid2,.sgrid,.sgr2{grid-template-columns:1fr}.acts,.cas{flex-direction:column;align-items:stretch}.bp,.bo,.bwa,.bwh{text-align:center;justify-content:center}}
 </style>
 </head>
 <body>
@@ -169,12 +169,68 @@ footer{background:var(--dk);padding:2.8rem 5% 1.8rem}
 <section class="sec products" id="produtos">
   <div class="si">
     <span class="ey">Nossas Soluções Principais</span>
-    <h2>Três produtos que <em>transformam</em> negócios</h2>
-    <p class="ssub">Soluções pensadas para empresas que querem crescer rápido, atender melhor e vender mais — todos os dias.</p>
+    <h2>Quatro produtos que <em>transformam</em> negócios</h2>
+    <p class="ssub">Dois produtos principais de IA + soluções completas de marketing digital para empresas que querem crescer, atender melhor e vender mais.</p>
+    <!-- PRODUTOS PRINCIPAIS (destaque) -->
     <div class="pgrid">
-      <div class="pc ft"><div class="pic">🤖</div><h3>Agentes de IA para WhatsApp</h3><p>Automatize seu atendimento com bots inteligentes que respondem, qualificam e fecham vendas no WhatsApp — sem precisar de equipe 24h.</p><ul class="pf"><li>Atendimento automático 24/7</li><li>Qualificação de leads com IA</li><li>Integração com CRM e sistemas</li><li>Fluxos personalizados por nicho</li><li>Relatórios em tempo real</li></ul><a href="https://wa.me/5515992850969" class="pl" target="_blank">Quero esse agente →</a></div>
-      <div class="pc"><div class="pic">📱</div><h3>Criação de Aplicativos e SaaS</h3><p>Transforme sua ideia em um produto digital completo. Apps mobile, plataformas SaaS e sistemas web sob medida para o seu mercado.</p><ul class="pf"><li>Apps iOS e Android nativos</li><li>Plataformas SaaS escaláveis</li><li>Design UX/UI profissional</li><li>Integração com APIs e pagamentos</li><li>Suporte e manutenção contínuos</li></ul><a href="https://wa.me/5515992850969" class="pl" target="_blank">Criar meu app →</a></div>
-      <div class="pc"><div class="pic">📈</div><h3>Tráfego Pago que Converte</h3><p>Campanhas de Google Ads e Meta Ads gerenciadas por especialistas. Investimento inteligente, segmentação precisa e resultados mensuráveis.</p><ul class="pf"><li>Google Ads e Meta Ads</li><li>Segmentação avançada de público</li><li>Criativos que convertem</li><li>Otimização diária das campanhas</li><li>Relatórios mensais detalhados</li></ul><a href="https://wa.me/5515992850969" class="pl" target="_blank">Escalar minhas vendas →</a></div>
+      <div class="pc ft">
+        <div class="pic">🤖</div>
+        <h3>Agente de IA para WhatsApp</h3>
+        <p>Seu WhatsApp vendendo e atendendo sozinho 24h por dia. Um bot inteligente que responde, qualifica leads e fecha vendas — sem precisar de equipe disponível a toda hora.</p>
+        <ul class="pf">
+          <li>Atendimento automático 24/7</li>
+          <li>Qualificação de leads com IA</li>
+          <li>Integração com CRM e sistemas</li>
+          <li>Agendamento pelo WhatsApp</li>
+          <li>Fluxos personalizados por nicho</li>
+          <li>Relatórios em tempo real</li>
+        </ul>
+        <a href="https://wa.me/5515992850969" class="pl" target="_blank">Quero meu agente de WhatsApp →</a>
+      </div>
+      <div class="pc ft" style="background:linear-gradient(150deg,#E8F5FF 0%,#fff 60%);border-color:rgba(0,150,245,.5)">
+        <div class="pc.ft::after" style="display:none"></div>
+        <div class="pic" style="background:#E8F5FF">🎙️</div>
+        <div style="position:absolute;top:.8rem;right:.8rem;font-size:.62rem;font-weight:700;letter-spacing:.1em;color:#fff;background:#0099C8;padding:.18rem .55rem;border-radius:100px">NOVO</div>
+        <h3>Agente de Voz com IA</h3>
+        <p>Terceirize seu call center para a inteligência artificial. Nosso agente de voz faz e recebe ligações com naturalidade humana — prospecção ativa, suporte, cobrança e muito mais.</p>
+        <ul class="pf">
+          <li>Faz e recebe ligações automaticamente</li>
+          <li>Voz natural — parece humano de verdade</li>
+          <li>Prospecção ativa em escala</li>
+          <li>Atendimento e suporte por voz</li>
+          <li>Cobrança e confirmações automáticas</li>
+          <li>Transcrição e relatório de cada ligação</li>
+        </ul>
+        <a href="https://wa.me/5515992850969" class="pl" target="_blank" style="color:#0099C8">Quero meu agente de voz →</a>
+      </div>
+    </div>
+
+    <!-- OUTROS PRODUTOS -->
+    <div class="pgrid2">
+      <div class="pc" style="padding:1.3rem 1.4rem">
+        <div class="pic" style="width:38px;height:38px;font-size:1.1rem">📱</div>
+        <h3 style="font-size:1rem">Criação de Aplicativos e SaaS</h3>
+        <p>Apps iOS/Android e plataformas SaaS sob medida para o seu mercado.</p>
+        <ul class="pf" style="margin-top:.8rem">
+          <li>Apps iOS e Android nativos</li>
+          <li>Plataformas SaaS escaláveis</li>
+          <li>Design UX/UI profissional</li>
+          <li>Integração com APIs e pagamentos</li>
+        </ul>
+        <a href="https://wa.me/5515992850969" class="pl" target="_blank">Criar meu app →</a>
+      </div>
+      <div class="pc" style="padding:1.3rem 1.4rem">
+        <div class="pic" style="width:38px;height:38px;font-size:1.1rem">📈</div>
+        <h3 style="font-size:1rem">Tráfego Pago que Converte</h3>
+        <p>Campanhas de Google Ads e Meta Ads gerenciadas por especialistas.</p>
+        <ul class="pf" style="margin-top:.8rem">
+          <li>Google Ads e Meta Ads</li>
+          <li>Segmentação avançada</li>
+          <li>Criativos que convertem</li>
+          <li>Relatórios mensais detalhados</li>
+        </ul>
+        <a href="https://wa.me/5515992850969" class="pl" target="_blank">Escalar minhas vendas →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -220,6 +276,7 @@ footer{background:var(--dk);padding:2.8rem 5% 1.8rem}
     <h2>Ecossistema digital <em>completo</em></h2>
     <p class="ssub">Além dos nossos três produtos principais, oferecemos tudo que sua marca precisa para brilhar no mundo digital.</p>
     <div class="sgr2">
+      <div class="si2" style="border-color:rgba(0,200,245,.3);background:rgba(0,200,245,.04)"><div class="sico">🎙️</div><div><h4>Agente de Voz com IA</h4><p>Ligações automáticas para prospecção, suporte e call center inteligente.</p></div></div>
       <div class="si2"><div class="sico">🌐</div><div><h4>Criação de Sites</h4><p>Sites modernos, rápidos e otimizados para SEO e conversão.</p></div></div>
       <div class="si2"><div class="sico">🔗</div><div><h4>Link da Bio</h4><p>Página de links personalizada integrada às suas redes.</p></div></div>
       <div class="si2"><div class="sico">📊</div><div><h4>Gestão de Redes Sociais</h4><p>Estratégia de conteúdo, postagem e engajamento profissional.</p></div></div>
