@@ -131,6 +131,66 @@ footer{background:var(--dk);padding:2.8rem 5% 1.8rem}
 @keyframes wfl{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 @media(max-width:850px){.pgrid,.pgrid2,.sgrid,.sgr2{grid-template-columns:1fr 1fr}.hi,.ceoi{grid-template-columns:1fr}.hlw{display:none}.ftt{flex-direction:column}}
 @media(max-width:520px){.pgrid,.pgrid2,.sgrid,.sgr2{grid-template-columns:1fr}.acts,.cas{flex-direction:column;align-items:stretch}.bp,.bo,.bwa,.bwh{text-align:center;justify-content:center}}
+
+/* ── DIAGNÓSTICO IA ── */
+.diag-section{padding:5rem 4%;background:linear-gradient(180deg,var(--lt) 0%,#fff 100%)}
+.diag-inner{max-width:900px;margin:0 auto}
+.diag-header{text-align:center;margin-bottom:2.5rem}
+.diag-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,200,245,.1);border:1px solid rgba(0,200,245,.3);border-radius:100px;padding:.3rem 1rem;font-size:.72rem;font-weight:700;color:var(--c2);margin-bottom:.9rem;text-transform:uppercase;letter-spacing:.07em}
+.diag-badge::before{content:'';width:6px;height:6px;background:var(--c);border-radius:50%;animation:dblink 1.8s ease-in-out infinite}
+@keyframes dblink{0%,100%{opacity:1}50%{opacity:.2}}
+.diag-box{background:#fff;border:2px solid rgba(0,200,245,.25);border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(0,180,230,.1)}
+.diag-topbar{background:linear-gradient(135deg,var(--c) 0%,var(--c2) 100%);padding:1rem 1.5rem;display:flex;align-items:center;gap:.8rem}
+.diag-avatar{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.diag-topbar-info strong{font-size:.92rem;font-weight:700;color:#fff;display:block}
+.diag-topbar-info span{font-size:.75rem;color:rgba(255,255,255,.75)}
+.diag-online{display:inline-block;width:7px;height:7px;background:#4AFF72;border-radius:50%;margin-right:4px;animation:dblink 2s infinite}
+.diag-messages{height:360px;overflow-y:auto;padding:1.2rem;display:flex;flex-direction:column;gap:.75rem;background:#F8FCFF;scroll-behavior:smooth}
+.diag-messages::-webkit-scrollbar{width:4px}
+.diag-messages::-webkit-scrollbar-track{background:transparent}
+.diag-messages::-webkit-scrollbar-thumb{background:rgba(0,200,245,.3);border-radius:4px}
+.dmsg{max-width:82%;display:flex;flex-direction:column;gap:.2rem}
+.dmsg.bot{align-self:flex-start}
+.dmsg.user{align-self:flex-end}
+.dmsg-bubble{padding:.65rem 1rem;border-radius:14px;font-size:.88rem;line-height:1.55}
+.dmsg.bot .dmsg-bubble{background:#fff;border:1px solid var(--b);color:var(--dk);border-bottom-left-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.dmsg.user .dmsg-bubble{background:var(--c);color:#fff;border-bottom-right-radius:4px}
+.dmsg-time{font-size:.65rem;color:var(--mu);align-self:flex-end}
+.dmsg.bot .dmsg-time{align-self:flex-start}
+.diag-typing{align-self:flex-start;display:none;align-items:center;gap:.3rem;padding:.55rem .85rem;background:#fff;border:1px solid var(--b);border-radius:14px;border-bottom-left-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.diag-typing.show{display:flex}
+.diag-typing .d{width:7px;height:7px;background:var(--c);border-radius:50%}
+.diag-typing .d:nth-child(1){animation:dtyping .8s ease 0s infinite}
+.diag-typing .d:nth-child(2){animation:dtyping .8s ease .15s infinite}
+.diag-typing .d:nth-child(3){animation:dtyping .8s ease .30s infinite}
+@keyframes dtyping{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+.diag-input-area{padding:1rem 1.2rem;border-top:1px solid var(--b);background:#fff;display:flex;gap:.7rem;align-items:flex-end}
+.diag-input{flex:1;border:1.5px solid var(--b);border-radius:12px;padding:.65rem .9rem;font-size:.88rem;font-family:Inter,sans-serif;color:var(--dk);resize:none;outline:none;line-height:1.5;min-height:44px;max-height:120px;transition:border-color .2s;background:#fff}
+.diag-input:focus{border-color:var(--c)}
+.diag-input::placeholder{color:#aaa}
+.diag-send{width:44px;height:44px;border-radius:10px;background:var(--c);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.diag-send:hover{background:var(--c2);transform:scale(1.05)}
+.diag-send:disabled{background:#ccc;cursor:not-allowed;transform:none}
+.diag-send svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.diag-chips{padding:.5rem 1.2rem .8rem;background:#fff;display:flex;gap:.5rem;flex-wrap:wrap}
+.diag-chip{background:var(--c3);border:1px solid rgba(0,200,245,.3);color:var(--c2);border-radius:100px;padding:.3rem .85rem;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap}
+.diag-chip:hover{background:var(--c);color:#fff;border-color:var(--c)}
+.diag-result{margin:0 1.2rem 1.2rem;padding:1.1rem 1.2rem;background:linear-gradient(135deg,rgba(0,200,245,.06) 0%,rgba(0,150,200,.03) 100%);border:1.5px solid rgba(0,200,245,.2);border-radius:14px;display:none}
+.diag-result.show{display:block}
+.diag-result h4{font-family:Syne,sans-serif;font-size:.95rem;font-weight:700;color:var(--dk);margin-bottom:.8rem}
+.result-products{display:flex;flex-direction:column;gap:.55rem}
+.result-product{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.6rem .8rem;border-radius:10px;background:#fff;border:1px solid var(--b)}
+.result-product.primary{border-color:rgba(0,200,245,.5);background:rgba(0,200,245,.04)}
+.rp-left{display:flex;align-items:center;gap:.6rem}
+.rp-icon{font-size:1.1rem}
+.rp-name{font-size:.85rem;font-weight:600;color:var(--dk)}
+.rp-why{font-size:.75rem;color:var(--mu);display:block}
+.rp-badge{font-size:.62rem;font-weight:700;background:var(--c);color:#fff;padding:.15rem .5rem;border-radius:100px;white-space:nowrap}
+.rp-badge.secondary{background:var(--lt);color:var(--c2);border:1px solid rgba(0,200,245,.3)}
+.diag-result-cta{margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap}
+.diag-cta-btn{background:var(--c);color:#fff;border:none;border-radius:8px;padding:.55rem 1.1rem;font-size:.82rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .2s}
+.diag-cta-btn:hover{background:var(--c2);transform:translateY(-1px)}
+
 </style>
 </head>
 <body>
@@ -141,6 +201,7 @@ footer{background:var(--dk);padding:2.8rem 5% 1.8rem}
     <li><a href="#produtos">Produtos</a></li>
     <li><a href="#como-funciona">Como Funciona</a></li>
     <li><a href="#ceo">Sobre</a></li>
+    <li><a href="#diagnostico" style="color:var(--c);font-weight:700">✨ Diagnóstico Grátis</a></li>
     <li><a href="#servicos">Serviços</a></li>
   </ul>
   <a href="https://wa.me/5515992850969" class="ncta" target="_blank">Falar com a Equipe</a>
@@ -288,6 +349,212 @@ footer{background:var(--dk);padding:2.8rem 5% 1.8rem}
     </div>
   </div>
 </section>
+
+
+<section class="diag-section" id="diagnostico">
+  <div class="diag-inner">
+    <div class="diag-header">
+      <div class="diag-badge">✨ Diagnóstico gratuito com IA</div>
+      <h2 style="font-family:Syne,sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.02em;color:var(--dk);margin-bottom:.8rem">
+        Descubra qual solução é <em style="font-style:normal;color:var(--c)">ideal para você</em>
+      </h2>
+      <p style="color:var(--mu);font-size:.97rem;max-width:520px;margin:0 auto">
+        Conte ao nosso agente de IA as suas maiores dores e desafios. Em instantes, ele indica quais dos nossos serviços fazem mais sentido para o seu negócio.
+      </p>
+    </div>
+
+    <div class="diag-box">
+      <div class="diag-topbar">
+        <div class="diag-avatar">🤖</div>
+        <div class="diag-topbar-info">
+          <strong>Agasbot IA — Consultor Digital</strong>
+          <span><span class="diag-online"></span>Online agora · Diagnóstico gratuito</span>
+        </div>
+      </div>
+
+      <div class="diag-messages" id="diagMessages">
+        <div class="dmsg bot">
+          <div class="dmsg-bubble">
+            Olá! 👋 Sou o consultor de IA da Agasbot. Vou te ajudar a descobrir qual solução é ideal para o seu negócio — de graça e sem compromisso.<br><br>
+            Me conta: <strong>qual é o maior desafio que você enfrenta hoje no seu negócio?</strong> Pode ser atendimento, vendas, falta de clientes, processos... fique à vontade!
+          </div>
+          <div class="dmsg-time">agora</div>
+        </div>
+        <div class="diag-typing" id="diagTyping">
+          <div class="d"></div><div class="d"></div><div class="d"></div>
+        </div>
+      </div>
+
+      <div class="diag-chips" id="diagChips">
+        <div class="diag-chip" onclick="sendChip(this)">Perco clientes por demora no atendimento</div>
+        <div class="diag-chip" onclick="sendChip(this)">Preciso prospectar mais clientes</div>
+        <div class="diag-chip" onclick="sendChip(this)">Minha equipe não dá conta do volume</div>
+        <div class="diag-chip" onclick="sendChip(this)">Quero automatizar meu negócio</div>
+        <div class="diag-chip" onclick="sendChip(this)">Preciso de mais vendas</div>
+      </div>
+
+      <div class="diag-result" id="diagResult">
+        <h4>🎯 Diagnóstico: soluções recomendadas para você</h4>
+        <div class="result-products" id="diagResultProducts"></div>
+        <div class="diag-result-cta">
+          <a href="https://wa.me/5515992850969?text=Fiz%20o%20diagn%C3%B3stico%20no%20site%20e%20quero%20saber%20mais!" class="diag-cta-btn" target="_blank">
+            💬 Falar com especialista
+          </a>
+        </div>
+      </div>
+
+      <div class="diag-input-area">
+        <textarea class="diag-input" id="diagInput" placeholder="Digite sua dúvida ou desafio aqui..." rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+        <button class="diag-send" id="diagSend" onclick="sendMessage()" aria-label="Enviar">
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const PRODUCTS = {
+    whatsapp: { icon:'🤖', name:'Agente de IA para WhatsApp', primary:true },
+    voz:      { icon:'🎙️', name:'Agente de Voz com IA', primary:true },
+    apps:     { icon:'📱', name:'Criação de Apps e SaaS', primary:false },
+    trafego:  { icon:'📈', name:'Tráfego Pago', primary:false },
+    sites:    { icon:'🌐', name:'Criação de Sites', primary:false },
+    criativos:{ icon:'🎨', name:'Criação de Criativos', primary:false },
+  };
+
+  const SYSTEM = `Você é o consultor digital da Agasbot Automação, empresa especializada em IA e marketing digital.
+
+Seu objetivo: entender as dores do cliente e recomendar os serviços certos.
+
+PRODUTOS DISPONÍVEIS:
+- Agente de IA para WhatsApp (PRODUTO PRINCIPAL): atendimento automático 24/7, qualificação de leads, vendas pelo WhatsApp
+- Agente de Voz com IA (PRODUTO PRINCIPAL): ligações automáticas, call center com IA, prospecção ativa por telefone, atendimento por voz
+- Criação de Apps e SaaS: desenvolvimento de aplicativos e plataformas digitais
+- Tráfego Pago: Google Ads e Meta Ads para gerar leads e vendas
+- Criação de Sites: sites profissionais e landing pages
+- Criação de Criativos: artes e vídeos para anúncios
+
+REGRAS OBRIGATÓRIAS:
+1. SEMPRE recomende o Agente de IA para WhatsApp OU o Agente de Voz (ou ambos) como produto(s) principal(ais) — independente da dor do cliente
+2. Só recomende outros produtos se fizerem sentido REAL para a dor apresentada
+3. Faça no máximo 2-3 perguntas antes de dar o diagnóstico
+4. Seja direto, empático e brasileiro no tom
+5. Quando tiver informação suficiente, gere o diagnóstico no formato JSON abaixo
+
+FORMATO DO DIAGNÓSTICO (quando pronto para recomendar):
+Responda normalmente no texto e ao final inclua exatamente este JSON (sem markdown):
+DIAGNOSTICO_JSON:{"recomendacoes":[{"produto":"whatsapp","motivo":"motivo curto aqui","prioritario":true},{"produto":"voz","motivo":"motivo curto","prioritario":false}]}
+
+Produtos válidos para o JSON: "whatsapp", "voz", "apps", "trafego", "sites", "criativos"
+Sempre inclua "whatsapp" ou "voz" (ou ambos) como prioritario:true.`;
+
+  let history = [];
+  let waiting = false;
+
+  window.sendChip = function(el) {
+    const text = el.textContent;
+    document.getElementById('diagChips').style.display = 'none';
+    addMessage('user', text);
+    callAPI(text);
+  };
+
+  window.handleKey = function(e) {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  };
+
+  window.autoResize = function(el) {
+    el.style.height = 'auto';
+    el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+  };
+
+  window.sendMessage = function() {
+    const input = document.getElementById('diagInput');
+    const text = input.value.trim();
+    if (!text || waiting) return;
+    document.getElementById('diagChips').style.display = 'none';
+    input.value = '';
+    input.style.height = 'auto';
+    addMessage('user', text);
+    callAPI(text);
+  };
+
+  function addMessage(role, text) {
+    const container = document.getElementById('diagMessages');
+    const typing = document.getElementById('diagTyping');
+    const div = document.createElement('div');
+    div.className = 'dmsg ' + role;
+    const now = new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+    div.innerHTML = '<div class="dmsg-bubble">' + text.replace(/\n/g,'<br>') + '</div><div class="dmsg-time">' + now + '</div>';
+    container.insertBefore(div, typing);
+    container.scrollTop = container.scrollHeight;
+  }
+
+  function showTyping(show) {
+    const t = document.getElementById('diagTyping');
+    t.className = show ? 'diag-typing show' : 'diag-typing';
+    if (show) { const c = document.getElementById('diagMessages'); c.scrollTop = c.scrollHeight; }
+    document.getElementById('diagSend').disabled = show;
+    waiting = show;
+  }
+
+  function showDiagnosis(recomendacoes) {
+    const result = document.getElementById('diagResult');
+    const products = document.getElementById('diagResultProducts');
+    products.innerHTML = '';
+    recomendacoes.forEach(r => {
+      const p = PRODUCTS[r.produto];
+      if (!p) return;
+      const div = document.createElement('div');
+      div.className = 'result-product' + (r.prioritario ? ' primary' : '');
+      div.innerHTML = '<div class="rp-left"><span class="rp-icon">' + p.icon + '</span><div><span class="rp-name">' + p.name + '</span><span class="rp-why">' + r.motivo + '</span></div></div>' +
+        '<span class="rp-badge' + (r.prioritario ? '' : ' secondary') + '">' + (r.prioritario ? '⭐ Recomendado' : 'Complementar') + '</span>';
+      products.appendChild(div);
+    });
+    result.className = 'diag-result show';
+  }
+
+  async function callAPI(userMessage) {
+    showTyping(true);
+    history.push({ role: 'user', content: userMessage });
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-6',
+          max_tokens: 1000,
+          system: SYSTEM,
+          messages: history
+        })
+      });
+      const data = await res.json();
+      const fullText = data.content && data.content[0] ? data.content[0].text : 'Desculpe, tive um problema. Pode tentar novamente?';
+
+      // Check for diagnosis JSON
+      const jsonMatch = fullText.match(/DIAGNOSTICO_JSON:(\{.+\})/s);
+      let displayText = fullText.replace(/DIAGNOSTICO_JSON:\{.+\}/s, '').trim();
+
+      showTyping(false);
+      addMessage('bot', displayText);
+      history.push({ role: 'assistant', content: fullText });
+
+      if (jsonMatch) {
+        try {
+          const diagData = JSON.parse(jsonMatch[1]);
+          if (diagData.recomendacoes) {
+            setTimeout(() => showDiagnosis(diagData.recomendacoes), 600);
+          }
+        } catch(e) {}
+      }
+    } catch(err) {
+      showTyping(false);
+      addMessage('bot', 'Ops, tive um problema de conexão. Tente novamente ou fale diretamente pelo WhatsApp! 😊');
+    }
+  }
+})();
+</script>
 
 <section class="ctas">
   <div class="ctai">
