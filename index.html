@@ -10,6 +10,13 @@
 :root{--c:#00C8F5;--c2:#009DBF;--c3:#E6F9FF;--dk:#0F1923;--mu:#5A6A7A;--lt:#F7FBFF;--b:#E0EFF6}
 body{font-family:Inter,sans-serif;background:#fff;color:var(--dk)}
 
+/* ANIMATIONS */
+.reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.bp, .pl { position: relative; overflow: hidden; }
+.bp::after, .pl::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%); transform: skewX(-20deg); transition: all 0.6s ease; }
+.bp:hover::after, .pl:hover::after { left: 150%; }
+
 /* NAV */
 nav{background:#fff;border-bottom:1px solid var(--b);padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;box-shadow:0 1px 12px rgba(0,0,0,.05)}
 nav img{height:44px;object-fit:contain}
@@ -531,5 +538,22 @@ footer{background:var(--dk);padding:2.8rem 5% 1.8rem}
 
 <a href="https://wa.me/5515992850969" class="waf" target="_blank">💬</a>
 
+<script>
+  document.querySelectorAll('.sec .si > span, .sec .si > h2, .sec .si > p, .pc, .si2, .hi > div, .ceo img, .cbc, .sgrid-wrap').forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.transitionDelay = `${(i % 4) * 0.15}s`;
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
