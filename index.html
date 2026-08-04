@@ -66,13 +66,16 @@ h2 em{font-style:normal;color:var(--c)}
 .pc:not(.ft) .pl:hover{background:var(--c);color:#fff;border-color:var(--c)}
 
 /* HOW */
-.how{background:#fff}
-.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-.step{background:var(--lt);border:1.5px solid var(--b);border-radius:15px;padding:1.5rem;transition:all .25s}
+.how{background:#fff;overflow:hidden;position:relative}
+.sgrid-wrap{display:flex;width:fit-content;animation:marquee 25s linear infinite}
+.sgrid-wrap:hover{animation-play-state:paused}
+.sgrid{display:flex;gap:1.2rem;padding:1rem 1.2rem 1rem 0}
+.step{background:var(--lt);border:1.5px solid var(--b);border-radius:15px;padding:1.5rem;transition:all .25s;width:280px;flex-shrink:0}
 .step:hover{border-color:var(--c);transform:translateY(-3px)}
 .snum{width:46px;height:46px;background:var(--c3);border:2px solid rgba(0,200,245,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Outfit,sans-serif;font-size:.92rem;font-weight:800;color:var(--c2);margin-bottom:1rem}
 .step h4{font-family:Outfit,sans-serif;font-size:.93rem;font-weight:700;margin-bottom:.4rem;color:var(--dk)}
 .step p{font-size:.83rem;color:var(--mu);line-height:1.55}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* CEO */
 .ceo{background:var(--lt)}
@@ -265,11 +268,17 @@ footer{background:var(--dk);padding:2.8rem 5% 1.8rem}
     <span class="ey">Processo</span>
     <h2>Do primeiro contato ao <em>resultado real</em></h2>
     <p class="ssub">Um processo claro, sem enrolação — do diagnóstico à entrega rodando.</p>
-    <div class="sgrid">
-      <div class="step"><div class="snum">01</div><h4>Diagnóstico gratuito</h4><p>Entendemos seu negócio, seu público e onde está a maior oportunidade de crescimento.</p></div>
-      <div class="step"><div class="snum">02</div><h4>Estratégia personalizada</h4><p>Montamos um plano específico para sua empresa — sem pacotes genéricos.</p></div>
-      <div class="step"><div class="snum">03</div><h4>Implementação ágil</h4><p>Nossa equipe coloca tudo no ar com rapidez, qualidade e suporte constante.</p></div>
-      <div class="step"><div class="snum">04</div><h4>Resultados e escala</h4><p>Acompanhamos os números, otimizamos e escalamos o que está funcionando.</p></div>
+    <div class="sgrid-wrap">
+      <div class="sgrid">
+        <div class="step"><div class="snum">01</div><h4>Diagnóstico gratuito</h4><p>Entendemos seu negócio, seu público e onde está a maior oportunidade de crescimento.</p></div>
+        <div class="step"><div class="snum">02</div><h4>Estratégia personalizada</h4><p>Montamos um plano específico para sua empresa — sem pacotes genéricos.</p></div>
+        <div class="step"><div class="snum">03</div><h4>Implementação ágil</h4><p>Nossa equipe coloca tudo no ar com rapidez, qualidade e suporte constante.</p></div>
+        <div class="step"><div class="snum">04</div><h4>Resultados e escala</h4><p>Acompanhamos os números, otimizamos e escalamos o que está funcionando.</p></div>
+        <div class="step"><div class="snum">01</div><h4>Diagnóstico gratuito</h4><p>Entendemos seu negócio, seu público e onde está a maior oportunidade de crescimento.</p></div>
+        <div class="step"><div class="snum">02</div><h4>Estratégia personalizada</h4><p>Montamos um plano específico para sua empresa — sem pacotes genéricos.</p></div>
+        <div class="step"><div class="snum">03</div><h4>Implementação ágil</h4><p>Nossa equipe coloca tudo no ar com rapidez, qualidade e suporte constante.</p></div>
+        <div class="step"><div class="snum">04</div><h4>Resultados e escala</h4><p>Acompanhamos os números, otimizamos e escalamos o que está funcionando.</p></div>
+      </div>
     </div>
   </div>
 </section>
