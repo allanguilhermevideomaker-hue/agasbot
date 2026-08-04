@@ -52,19 +52,18 @@ h2 em{font-style:normal;color:var(--c)}
 
 /* PRODUCTS */
 .products{background:var(--lt)}
-.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem}.pgrid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
-.pc{background:#fff;border:1.5px solid var(--b);border-radius:16px;padding:1.8rem 1.6rem;position:relative;overflow:hidden;transition:all .25s}
-.pc:hover{transform:translateY(-5px);box-shadow:0 14px 44px rgba(0,180,230,.12);border-color:rgba(0,200,245,.5)}
-.pc.ft{border-color:rgba(0,200,245,.5);background:linear-gradient(150deg,var(--c3) 0%,#fff 60%)}
-.pc.ft::after{content:'MAIS POPULAR';position:absolute;top:.8rem;right:.8rem;font-size:.61rem;font-weight:700;letter-spacing:.1em;color:#fff;background:var(--c);padding:.18rem .55rem;border-radius:100px}
-.pic{width:46px;height:46px;background:var(--c3);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.4rem}
-.pc h3{font-family:Outfit,sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:.6rem;color:var(--dk)}
-.pc p{color:var(--mu);font-size:.87rem;line-height:1.6;margin-bottom:1.3rem}
-.pf{list-style:none;display:flex;flex-direction:column;gap:.42rem;margin-bottom:1.4rem}
-.pf li{display:flex;align-items:center;gap:.5rem;font-size:.84rem;color:var(--dk)}
-.pf li::before{content:'✓';min-width:16px;height:16px;background:var(--c3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.62rem;color:var(--c2);font-weight:700}
-.pl{color:var(--c2);text-decoration:none;font-size:.87rem;font-weight:600}
-.pl:hover{color:var(--dk)}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2.5rem}
+.pc{background:#fff;border:1.5px solid var(--b);border-radius:24px;padding:3rem 2rem;position:relative;overflow:hidden;transition:all .3s;text-align:center;display:flex;flex-direction:column;align-items:center}
+.pc:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,180,230,.15);border-color:rgba(0,200,245,.6)}
+.pc.ft{border-color:rgba(0,200,245,.5);background:linear-gradient(180deg,#fff 0%,var(--c3) 100%)}
+.pc.ft::after{content:'MAIS VENDIDO';position:absolute;top:1.2rem;right:50%;transform:translateX(50%);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#fff;background:var(--c);padding:.25rem .8rem;border-radius:100px;white-space:nowrap}
+.pic{width:80px;height:80px;background:linear-gradient(135deg,var(--c3) 0%,rgba(0,200,245,.2) 100%);border-radius:20px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:2.5rem;box-shadow:0 10px 20px rgba(0,200,245,.15);color:var(--c)}
+.pc h3{font-family:Outfit,sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:.8rem;color:var(--dk)}
+.pc p{color:var(--mu);font-size:.95rem;line-height:1.6;margin-bottom:2rem;flex-grow:1}
+.pl{background:var(--c);color:#fff;text-decoration:none;font-size:.95rem;font-weight:700;padding:.9rem 1.8rem;border-radius:12px;transition:all .25s;width:100%;max-width:240px}
+.pl:hover{background:var(--c2);transform:scale(1.05);box-shadow:0 8px 25px rgba(0,200,245,.4)}
+.pc:not(.ft) .pl{background:var(--lt);color:var(--c2);border:1.5px solid rgba(0,200,245,.3)}
+.pc:not(.ft) .pl:hover{background:var(--c);color:#fff;border-color:var(--c)}
 
 /* HOW */
 .how{background:#fff}
@@ -232,65 +231,30 @@ footer{background:var(--dk);padding:2.8rem 5% 1.8rem}
     <span class="ey">Nossas Soluções Principais</span>
     <h2>Quatro produtos que <em>transformam</em> negócios</h2>
     <p class="ssub">Dois produtos principais de IA + soluções completas de marketing digital para empresas que querem crescer, atender melhor e vender mais.</p>
-    <!-- PRODUTOS PRINCIPAIS (destaque) -->
     <div class="pgrid">
       <div class="pc ft">
         <div class="pic">🤖</div>
-        <h3>Agente de IA para WhatsApp</h3>
-        <p>Seu WhatsApp vendendo e atendendo sozinho 24h por dia. Um bot inteligente que responde, qualifica leads e fecha vendas — sem precisar de equipe disponível a toda hora.</p>
-        <ul class="pf">
-          <li>Atendimento automático 24/7</li>
-          <li>Qualificação de leads com IA</li>
-          <li>Integração com CRM e sistemas</li>
-          <li>Agendamento pelo WhatsApp</li>
-          <li>Fluxos personalizados por nicho</li>
-          <li>Relatórios em tempo real</li>
-        </ul>
-        <a href="https://wa.me/5515992850969" class="pl" target="_blank">Quero meu agente de WhatsApp →</a>
+        <h3>Agentes de WhatsApp</h3>
+        <p>Atendimento, qualificação e vendas automáticas 24h por dia via IA.</p>
+        <a href="https://wa.me/5515992850969" class="pl" target="_blank">Quero esse agente</a>
       </div>
-      <div class="pc ft" style="background:linear-gradient(150deg,#E8F5FF 0%,#fff 60%);border-color:rgba(0,150,245,.5)">
-        <div class="pc.ft::after" style="display:none"></div>
-        <div class="pic" style="background:#E8F5FF">🎙️</div>
-        <div style="position:absolute;top:.8rem;right:.8rem;font-size:.62rem;font-weight:700;letter-spacing:.1em;color:#fff;background:#0099C8;padding:.18rem .55rem;border-radius:100px">NOVO</div>
+      <div class="pc ft">
+        <div class="pic">🎙️</div>
         <h3>Agente de Voz com IA</h3>
-        <p>Terceirize seu call center para a inteligência artificial. Nosso agente de voz faz e recebe ligações com naturalidade humana — prospecção ativa, suporte, cobrança e muito mais.</p>
-        <ul class="pf">
-          <li>Faz e recebe ligações automaticamente</li>
-          <li>Voz natural — parece humano de verdade</li>
-          <li>Prospecção ativa em escala</li>
-          <li>Atendimento e suporte por voz</li>
-          <li>Cobrança e confirmações automáticas</li>
-          <li>Transcrição e relatório de cada ligação</li>
-        </ul>
-        <a href="https://wa.me/5515992850969" class="pl" target="_blank" style="color:#0099C8">Quero meu agente de voz →</a>
+        <p>Terceirize seu call center. Ligações com voz natural para prospecção e suporte.</p>
+        <a href="https://wa.me/5515992850969" class="pl" target="_blank">Quero agente de voz</a>
       </div>
-    </div>
-
-    <!-- OUTROS PRODUTOS -->
-    <div class="pgrid2">
-      <div class="pc" style="padding:1.3rem 1.4rem">
-        <div class="pic" style="width:38px;height:38px;font-size:1.1rem">📱</div>
-        <h3 style="font-size:1rem">Criação de Aplicativos e SaaS</h3>
-        <p>Apps iOS/Android e plataformas SaaS sob medida para o seu mercado.</p>
-        <ul class="pf" style="margin-top:.8rem">
-          <li>Apps iOS e Android nativos</li>
-          <li>Plataformas SaaS escaláveis</li>
-          <li>Design UX/UI profissional</li>
-          <li>Integração com APIs e pagamentos</li>
-        </ul>
-        <a href="https://wa.me/5515992850969" class="pl" target="_blank">Criar meu app →</a>
+      <div class="pc">
+        <div class="pic">📱</div>
+        <h3>Apps e SaaS</h3>
+        <p>Desenvolvimento de aplicativos e sistemas web sob medida para o seu mercado.</p>
+        <a href="https://wa.me/5515992850969" class="pl" target="_blank">Criar meu app</a>
       </div>
-      <div class="pc" style="padding:1.3rem 1.4rem">
-        <div class="pic" style="width:38px;height:38px;font-size:1.1rem">📈</div>
-        <h3 style="font-size:1rem">Tráfego Pago que Converte</h3>
-        <p>Campanhas de Google Ads e Meta Ads gerenciadas por especialistas.</p>
-        <ul class="pf" style="margin-top:.8rem">
-          <li>Google Ads e Meta Ads</li>
-          <li>Segmentação avançada</li>
-          <li>Criativos que convertem</li>
-          <li>Relatórios mensais detalhados</li>
-        </ul>
-        <a href="https://wa.me/5515992850969" class="pl" target="_blank">Escalar minhas vendas →</a>
+      <div class="pc">
+        <div class="pic">📈</div>
+        <h3>Tráfego Pago</h3>
+        <p>Anúncios otimizados no Google e Meta Ads para atrair clientes diariamente.</p>
+        <a href="https://wa.me/5515992850969" class="pl" target="_blank">Escalar vendas</a>
       </div>
     </div>
   </div>
